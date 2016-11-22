@@ -50,30 +50,21 @@
 
       <h2>Books</h2>
       <div>
-      <select ng-model="bookController.searchObject" ng-options="book.genre for book in bookController.books"></select>
+      <select ng-model="bookController.searchObject" ng-options="book.genre for book in bookController.books | unique:'genre'"></select>
       </div>
       <div class="book" ng-repeat="book in bookController.books | filter:{'genre': bookController.searchObject.genre}">
         <p>
-              <!-- {{book.title}} -->
-              <input type="text" name="title" class="bookInput" ng-model="book.title"/>
-              <!-- {{book.author}} -->
+              <input type="text" name="title" class="bookInput" id="title" ng-model="book.title"/>
               <input type="text" name="author" class="bookInput" ng-model="book.author"/>
-              <!-- {{book.published}} -->
-              <input type="text" name="published" class="bookInput" ng-model="book.published"/>
-              <!-- {{book.genre}} -->
+              <input type="text" name="published" class="bookInput" ng-model="book.published | date:'MM/dd/yyyy'">
               <input type="text" name="genre" class="bookInput" ng-model="book.genre"/>
-              <!-- {{book.edition}} -->
               <input type="number" name="edition" class="bookInput" ng-model="book.edition"/>
-              <!-- {{book.publisher}} -->
               <input type="text" name="publisher" class="bookInput" ng-model="book.publisher"/>
-          </p>
+        </p>
             <button ng-click="bookController.updateBook(book)">Update</button>
             <button ng-click="bookController.deleteBook(book)">Delete</button>
 
-             <!-- By: {{book.author}}, Genre: {{book.genre}}, Publisher: {{book.publisher}}, Edition {{book.edition}} published on {{book.published}}</p> -->
-
       </div>
     </main>
-
   </body>
 </html>

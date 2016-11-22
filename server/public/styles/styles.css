@@ -12,3 +12,10 @@ h2 {
   margin-bottom: 12px;
   padding: 10px;
 }
+.bookInput{
+  width: 130px;
+}
+
+#title{
+  width: 400px;
+}
