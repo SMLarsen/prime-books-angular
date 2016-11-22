@@ -8,7 +8,7 @@ h2 {
 }
 
 .book {
-  border: 1px solid magenta;
+  background-color: #249acc;
   margin-bottom: 12px;
   padding: 10px;
 }
