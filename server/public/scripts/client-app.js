@@ -39,6 +39,11 @@ myApp.controller("BookController", ["$http", function($http) {
 
   self.updateBook = function(bookObj) {
     console.log(bookObj);
+    $http.put('/books/' + bookObj.id, bookObj)
+    .then(function(response){
+      console.log('Update finished');
+      getBooks();
+    });
   };
 }]);
 

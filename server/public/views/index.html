@@ -49,20 +49,28 @@
       </form>
 
       <h2>Books</h2>
+      <div>
+      <select ng-repeat="genre in BookController.books">
+        <option ng-model="genre.genre">{{genre.genre}}</option>
+      </select>
+      </div>
       <div class="book" ng-repeat="book in bookController.books">
-        <div>
-          <p>
-              <input type="text" ng-model="bookController.book.title" name="title" class="bookInput" value="{{book.title}}"/>
-              <input type="text" ng-model="bookController.book.author" name="author" class="bookInput" value="{{book.author}}"/>
-              <!-- <input type="date" ng-model="bookController.book.published" name="published"  class="bookInput" value="{{book.published}}"/> -->
-              <input type="text" ng-model="bookController.book.genre" name="genre" class="bookInput" value="{{book.genre}}"/>
-              <!-- <input type="number" ng-model="bookController.book.edition" name="edition" class="bookInput" value="{{book.edition}}"/> -->
-              <input type="text" ng-model="bookController.book.publisher" name="publisher" class="bookInput" value="{{book.publisher}}"/>
+        <p>
+              <!-- {{book.title}} -->
+              <input type="text" name="title" class="bookInput" ng-model="book.title"/>
+              <!-- {{book.author}} -->
+              <input type="text" name="author" class="bookInput" ng-model="book.author"/>
+              <!-- {{book.published}} -->
+              <input type="text" name="published" class="bookInput" ng-model="book.published"/>
+              <!-- {{book.genre}} -->
+              <input type="text" name="genre" class="bookInput" ng-model="book.genre"/>
+              <!-- {{book.edition}} -->
+              <input type="number" name="edition" class="bookInput" ng-model="book.edition"/>
+              <!-- {{book.publisher}} -->
+              <input type="text" name="publisher" class="bookInput" ng-model="book.publisher"/>
           </p>
             <button ng-click="bookController.updateBook(book)">Update</button>
             <button ng-click="bookController.deleteBook(book)">Delete</button>
-          </div>
-
 
              <!-- By: {{book.author}}, Genre: {{book.genre}}, Publisher: {{book.publisher}}, Edition {{book.edition}} published on {{book.published}}</p> -->
 
