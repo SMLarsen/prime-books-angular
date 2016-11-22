@@ -7,13 +7,24 @@ h2 {
   color: gray;
 }
 
+select {
+  margin-bottom: 10px;
+  height: 35px;
+  width: 200px;
+}
+
 .book {
   background-color: #249acc;
   margin-bottom: 12px;
   padding: 10px;
 }
+
 .bookInput{
-  width: 130px;
+  width: 180px;
+}
+
+.bookInputSm {
+  width: 80px;
 }
 
 #title{
