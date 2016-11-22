@@ -26,12 +26,20 @@ myApp.controller("BookController", ["$http", function($http) {
         console.log('POST finished. Get books again.');
         getBooks();
       });
-  }
+  };
 
-  self.clickMe = function(bookObj) {
+  self.deleteBook = function(bookObj) {
     console.log(bookObj);
-  }
+    $http.delete('/books/' + bookObj.id)
+      .then(function(response) {
+        console.log('DELETE finished');
+        getBooks();
+      });
+  };
 
+  self.updateBook = function(bookObj) {
+    console.log(bookObj);
+  };
 }]);
 
 // $(document).ready(function () {
