@@ -50,11 +50,9 @@
 
       <h2>Books</h2>
       <div>
-      <select ng-repeat="genre in BookController.books">
-        <option ng-model="genre.genre">{{genre.genre}}</option>
-      </select>
+      <select ng-model="bookController.searchObject" ng-options="book.genre for book in bookController.books"></select>
       </div>
-      <div class="book" ng-repeat="book in bookController.books">
+      <div class="book" ng-repeat="book in bookController.books | filter:{'genre': bookController.searchObject.genre}">
         <p>
               <!-- {{book.title}} -->
               <input type="text" name="title" class="bookInput" ng-model="book.title"/>
