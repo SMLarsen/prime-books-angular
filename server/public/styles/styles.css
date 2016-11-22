@@ -24,7 +24,12 @@ select {
 }
 
 .bookInputSm {
-  width: 80px;
+  width: 100px;
+}
+
+.bookInputXSm {
+  width: 50px;
+  text-align: center;
 }
 
 #title{

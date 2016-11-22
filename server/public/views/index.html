@@ -56,9 +56,9 @@
         <p>
               <input type="text" name="title" class="bookInput" id="title" ng-model="book.title"/>
               <input type="text" name="author" class="bookInput" ng-model="book.author"/>
-              <input type="text" name="published" class="bookInputSm" ng-model="book.published | date:'MM/dd/yyyy'">
+              <input type="text" name="published" class="bookInputSm" ng-model="book.published | date">
               <input type="text" name="genre" class="bookInput" ng-model="book.genre"/>
-              <input type="number" name="edition" class="bookInputSm" ng-model="book.edition"/>
+              <input type="number" name="edition" class="bookInputXSm" ng-model="book.edition"/>
               <input type="text" name="publisher" class="bookInput" ng-model="book.publisher"/>
         </p>
             <button ng-click="bookController.updateBook(book)">Update</button>
