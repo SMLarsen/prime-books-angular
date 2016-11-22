@@ -50,9 +50,22 @@
 
       <h2>Books</h2>
       <div class="book" ng-repeat="book in bookController.books">
-        <p>{{book.title}} By: {{book.author}}, Genre: {{book.genre}}, Publisher: {{book.publisher}}, Edition {{book.edition}} published on {{book.published}}</p>
-        <button ng-click="bookController.updateBook(book)">Update</button>
-        <button ng-click="bookController.deleteBook(book)">Delete</button>
+        <div>
+          <p>
+              <input type="text" ng-model="bookController.book.title" name="title" class="bookInput" value="{{book.title}}"/>
+              <input type="text" ng-model="bookController.book.author" name="author" class="bookInput" value="{{book.author}}"/>
+              <!-- <input type="date" ng-model="bookController.book.published" name="published"  class="bookInput" value="{{book.published}}"/> -->
+              <input type="text" ng-model="bookController.book.genre" name="genre" class="bookInput" value="{{book.genre}}"/>
+              <!-- <input type="number" ng-model="bookController.book.edition" name="edition" class="bookInput" value="{{book.edition}}"/> -->
+              <input type="text" ng-model="bookController.book.publisher" name="publisher" class="bookInput" value="{{book.publisher}}"/>
+          </p>
+            <button ng-click="bookController.updateBook(book)">Update</button>
+            <button ng-click="bookController.deleteBook(book)">Delete</button>
+          </div>
+
+
+             <!-- By: {{book.author}}, Genre: {{book.genre}}, Publisher: {{book.publisher}}, Edition {{book.edition}} published on {{book.published}}</p> -->
+
       </div>
     </main>
 
